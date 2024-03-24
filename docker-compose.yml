@@ -1,15 +1,15 @@
-version: "2"
+version: '2'
 
 services:
   whatsmyip:
     build:
       context: ./
-    image: eugenmayer/whatsmyip
+    image: ghrc.io/eugenmayer/whatsmyip
     labels:
-      - "traefik.backend=whatsmyip"
-      - "traefik.port=8080"
-      - "traefik.frontend.rule=Host:myip.lan"
-      - "traefik.enable=true"
+      - 'traefik.backend=whatsmyip'
+      - 'traefik.port=8080'
+      - 'traefik.frontend.rule=Host:myip.lan'
+      - 'traefik.enable=true'
     ports:
       - 8080:8080
   lb:
@@ -27,7 +27,7 @@ services:
   fake:
     image: emilevauge/whoami
     labels:
-        - "traefik.backend=fake"
-        - "traefik.port=80"
-        - "traefik.frontend.rule=Host:whoami.lan"
-        - "traefik.enable=true"
+      - 'traefik.backend=fake'
+      - 'traefik.port=80'
+      - 'traefik.frontend.rule=Host:whoami.lan'
+      - 'traefik.enable=true'
